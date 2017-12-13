@@ -240,7 +240,7 @@ function displayInputnone() {
 //solves what's on display. changes afterEquals to true to allow for what was mentioned before.
 function displaySolve() {
     var div = document.getElementById("display-content");
-    var solve = eval(ginput).toFixed(14);
+    var solve = eval(ginput).toFixed(19);
     var solveNone = parseFloat(solve).toString();
     if (solve == "Infinity"){
         div.innerHTML = "Undefined";
@@ -303,7 +303,7 @@ function rooteth() {
 
 function power2(){
   var div = document.getElementById("display-content");
-  ginput = parseInt(ginput) * parseInt(ginput);
+  ginput = parseFloat(ginput) * parseFloat(ginput);
   ginput = ginput.toString();
   div.innerHTML = ginput;
 }
