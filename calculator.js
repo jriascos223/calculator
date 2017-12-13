@@ -296,7 +296,7 @@ function percent() {
 function rooteth() {
     var div = document.getElementById("display-content");
     ginput += "Math.sqrt(";
-    div.innerHTML = ginput;
+    div.innerHTML += "&#8730;(";
     dots = false;
     afterEquals = false;
 }
