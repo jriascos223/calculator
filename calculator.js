@@ -247,7 +247,7 @@ function displaySolve() {
         ginput = "";
     }else {
     
-    div.style.cssText= 'text-align:right; font-size:20px;';
+    div.style.cssText= 'text-align:right; font-size:35px;';
     div.innerHTML = solveNone;
     ginput = solveNone;
     afterEquals = true;

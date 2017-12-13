@@ -1,9 +1,11 @@
 #display {
   border: 2px solid black;
   position:relative;
-  width:209px;
-  height:85px;
+  width:auto;
+  height:150px;
   margin-bottom:5px;
+  margin-left:auto;
+  margin-right:auto;
   overflow-x:auto;
   white-space:nowrap;
   background-color:green;
@@ -16,9 +18,9 @@
 }
 #display-content {
     text-align:right;
-    width:209px;
+    width:auto;
     outline:none;
-    font-size:20px;
+    font-size:35px;
     font-family:"Courier New";
 }
 #title {
@@ -42,6 +44,8 @@ button {
   border-radius:20px;
   outline:none;
   border-color:black;
+  width:75px;
+  height:50px;
 }
 
 button:hover {
@@ -52,22 +56,23 @@ button:hover {
     border:5px solid green;
     display:block;
     background-color:grey;
-    width:223px;
-    height:300px;
+    width:400px;
+    height:450px;
     border-radius:5px;
-    margin-top:15%;
     position:absolute;
     top:0;
     bottom:0;
     right:0;
     left:0;
     margin:auto;
+    margin-top:100px;
 }
 
 table {
     background-color:grey;
     margin:auto;
-    height:200px;
+    height:280px;
+    width:380px;
 }
 
 body {
