@@ -83,6 +83,7 @@ function displayInput(a) {
         ginput += "5";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "six"){
+        
         if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
             ginput = "";
             div.innerHTML = "";
@@ -240,7 +241,7 @@ function displayInputnone() {
 //solves what's on display. changes afterEquals to true to allow for what was mentioned before.
 function displaySolve() {
     var div = document.getElementById("display-content");
-    var solve = eval(ginput).toFixed(19);
+    var solve = eval(ginput).toFixed(14);
     var solveNone = parseFloat(solve).toString();
     if (solve == "Infinity"){
         div.innerHTML = "Undefined";
