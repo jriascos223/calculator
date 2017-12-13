@@ -240,15 +240,16 @@ function displayInputnone() {
 //solves what's on display. changes afterEquals to true to allow for what was mentioned before.
 function displaySolve() {
     var div = document.getElementById("display-content");
-    var solve = eval(ginput);
-    var solves = solve.toString();
-    if (solves == "Infinity"){
+    var solve = eval(ginput).toFixed(14);
+    var solveNone = parseFloat(solve).toString();
+    if (solve == "Infinity"){
         div.innerHTML = "Undefined";
         ginput = "";
     }else {
+    
     div.style.cssText= 'text-align:right; font-size:20px;';
-    div.innerHTML = solves;
-    ginput = solves;
+    div.innerHTML = solveNone;
+    ginput = solveNone;
     afterEquals = true;
     dots = false;
     }
