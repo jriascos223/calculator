@@ -1,17 +1,32 @@
 var ginput = "";
 var afterEquals = false;
+var dots = false;
+
+//Displays input by identifying each button based on id.
+//after equals is so that the result of one equation does not end up being used as the next number
+//Let's say 2=2 = 4 is performed
+//it wont make 42 if the user inputs 2 again.
+//no leading zeroes makes everything so long and annoying but
 
 function displayInput(a) {
     var div = document.getElementById("display-content");
     if (a == "seven"){
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        } div.innerHTML = ginput;
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
             afterEquals = false;
         }
         ginput += "7";
-        div.innerHTML += ginput.slice(-1);   
+        div.innerHTML += ginput.slice(-1);
     }else if (a == "one") {
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        }
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
@@ -20,6 +35,10 @@ function displayInput(a) {
         ginput += "1";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "two") {
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        }
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
@@ -28,6 +47,10 @@ function displayInput(a) {
         ginput += "2";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "three"){
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        }
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
@@ -36,6 +59,10 @@ function displayInput(a) {
         ginput += "3";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "four"){
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        }
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
@@ -44,6 +71,10 @@ function displayInput(a) {
         ginput += "4";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "five"){
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        }
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
@@ -52,6 +83,10 @@ function displayInput(a) {
         ginput += "5";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "six"){
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        }
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
@@ -60,6 +95,10 @@ function displayInput(a) {
         ginput += "6";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "eight"){
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        }
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
@@ -68,6 +107,10 @@ function displayInput(a) {
         ginput += "8";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "nine"){
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput = "";
+            div.innerHTML = "";
+        }
         if (afterEquals == true){
             div.innerHTML = "";
             ginput = "";
@@ -76,63 +119,142 @@ function displayInput(a) {
         ginput += "9";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "zero"){
-        ginput += "0";
-        div.innerHTML += ginput.slice(-1);
-        if (afterEquals == true) {
+        if (afterEquals == true){
+            div.innerHTML = "";
+            ginput = "";
             afterEquals = false;
         }
+        if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
+            ginput += "";
+            div.innerHTML += "";
+        }else{
+            ginput += "0";
+            div.innerHTML += ginput.slice(-1);
+        }
     }else if (a == "plus") {
+      if (dots == true){
+        dots = false;
+      }
+      if (ginput.slice(-1) == "+"){
+        div.innerHTML += "";
+        ginput += "";
+      }else {
         ginput += "+";
         div.innerHTML += ginput.slice(-1);
+      }
         if (afterEquals == true) {
             afterEquals = false;
         }
     }else if (a == "divide"){
+      if (dots == true){
+        dots = false;
+      }
+      if (ginput.slice(-1) == "/"){
+        div.innerHTML += "";
+        ginput += "";
+      }else {
         ginput += "/";
         div.innerHTML += ginput.slice(-1);
-        if (afterEquals == true) {
+      }
+      if (afterEquals == true) {
+            afterEquals = false;
+        }
+if (afterEquals == true) {
             afterEquals = false;
         }
     }else if (a == "multiply"){
+      if (dots == true){
+        dots = false;
+      }
+      if (ginput.slice(-1) == "*"){
+        div.innerHTML += "";
+        ginput += "";
+      }else {
         ginput += "*";
         div.innerHTML += ginput.slice(-1);
-        if (afterEquals == true) {
+      }
+
+if (afterEquals == true) {
             afterEquals = false;
         }
     }else if (a == "point"){
+      if (ginput.slice(-1) == "." || dots == true){
+        div.innerHTML += "";
+        ginput += "";
+      }else {
         ginput += ".";
         div.innerHTML += ginput.slice(-1);
-        if (afterEquals == true) {
+        dots = true;
+      }
+      if (afterEquals == true) {
             afterEquals = false;
         }
     }else if (a == "minus"){
-         if (afterEquals == true) {
-            afterEquals = false;
-        }
+      if (dots == true){
+        dots = false;
+      }
+      if (ginput.slice(-1) == "-"){
+        div.innerHTML += "";
+        ginput += "";
+      }else {
         ginput += "-";
         div.innerHTML += ginput.slice(-1);
-       
+      }
+if (afterEquals == true) {
+            afterEquals = false;
+        }
+
+    }else if (a == "close)"){
+      ginput += ")";
+      div.innerHTML += ginput.slice(-1);
+      if (afterEquals == true){
+        afterEquals = false;
+      }
+    }else if (a == "open("){
+      ginput += "(";
+      div.innerHTML += ginput.slice(-1);
+      if (afterEquals == true){
+        afterEquals = false;
+      }
+    }else if (a == "squared"){
+      if (dots == true){
+        dots = false;
+      }
+      ginput += "**";
+      div.innerHTML = ginput;
+      if (afterEquals == true){
+        afterEquals = false;
+      }
     }
-    
+
 }
 
+//Clears display
 function displayInputnone() {
     var ine = document.getElementById("display-content");
     ine.innerHTML = "";
     ginput = "";
+    dots = false;
 }
 
+//solves what's on display. changes afterEquals to true to allow for what was mentioned before.
 function displaySolve() {
     var div = document.getElementById("display-content");
-    var solve = eval(ginput).toString();
-    div.style.cssText= 'text-align:right; font-size:35px;';
-    div.innerHTML = solve;
-    ginput = solve;
+    var solve = eval(ginput);
+    var solves = solve.toString();
+    if (solves == "Infinity"){
+        div.innerHTML = "Undefined";
+        ginput = "";
+    }else {
+    div.style.cssText= 'text-align:right; font-size:20px;';
+    div.innerHTML = solves;
+    ginput = solves;
     afterEquals = true;
-    
-    
-}
+    dots = false;
+    }
 
+}
+//delete key. Got tired of not having one.
 function deleteLast() {
     var div = document.getElementById("display-content");
     ginput = ginput.slice(0, -1);
@@ -144,7 +266,7 @@ function deleteLast() {
     }
 
 }
-
+ //change from positive to negative simply by multiplying by -1
 function sign() {
     var div = document.getElementById("display-content");
     ginput = eval(ginput) * -1;
@@ -153,10 +275,11 @@ function sign() {
         displayInputnone();
         ginput = "";
     }else {
-        div.innerHTML = ginput;   
+        div.innerHTML = ginput;
     }
 }
 
+//divide by 100
 function percent() {
     var div = document.getElementById("display-content");
     ginput = parseFloat(ginput) / 100;
@@ -169,6 +292,17 @@ function percent() {
     }
 }
 
+function rooteth() {
+    var div = document.getElementById("display-content");
+    ginput += "Math.sqrt(";
+    div.innerHTML = ginput;
+    dots = false;
+    afterEquals = false;
+}
 
-
-
+function power2(){
+  var div = document.getElementById("display-content");
+  ginput = parseInt(ginput) * parseInt(ginput);
+  ginput = ginput.toString();
+  div.innerHTML = ginput;
+}

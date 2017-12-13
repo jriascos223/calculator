@@ -1,11 +1,10 @@
 #display {
   border: 2px solid black;
   position:relative;
-  width:165px;
-  height:79px;
+  width:209px;
+  height:85px;
   margin-bottom:5px;
   overflow-x:auto;
-  overflow-y:auto;
   white-space:nowrap;
   background-color:green;
   margin-top:5px;
@@ -17,16 +16,35 @@
 }
 #display-content {
     text-align:right;
-    width:165px;
+    width:209px;
     outline:none;
-    font-size:35px;
+    font-size:20px;
+    font-family:"Courier New";
 }
+#title {
+  background-color:green;
+  font-family:"Courier New";
+  border: 4px solid #264D00;
+  color:white;
+  display:inline-block;
+  text-align:center;
+  padding:5px;
 
+}
+h1 {
+  font-family:"Lobster", cursive;
+  text-align:center;
+  color:green;
+
+}
+.center {
+  text-align:center;
+  display:block;
+}
 button {
   width:40px;
-  padding-top:5px;
-  padding-bottom:5px;
   background-color:white-space;
+  padding:5px;
   border-radius:20px;
   outline:none;
   border-color:black;
@@ -38,16 +56,24 @@ button:hover {
 
 #outline {
     border:5px solid green;
-    margin:auto;
     display:block;
     background-color:grey;
-    width:180px;
+    width:223px;
+    height:300px;
     border-radius:5px;
     margin-top:15%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    margin:auto;
 }
 
 table {
     background-color:grey;
+    margin:auto;
+    height:200px;
 }
 
 body {
@@ -55,5 +81,5 @@ body {
 }
 
 button:active {
-  background-color:green;
+    background-color:green;
 }

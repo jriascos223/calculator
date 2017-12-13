@@ -3,8 +3,11 @@
   <head>
     <script src = "calculator.js" type = "text/javascript"></script>
     <link href = "calculator.css" type = "text/css" rel = "stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   </head>
-  <body id = "body">
+  <body>
+    <span class = "center"><h1 id = "title">Joe's PSET 5</h1><span>
+    <h1>Not the best but somewhat close.</h1>
     <div id = "outline">
     <div id = "display"> <div id = "display-content"> </div> </div>
     <table>
@@ -12,30 +15,35 @@
     <td><button id = "clear" onclick = "displayInputnone()">C</button></td>
     <td><button id = "del" onclick = "deleteLast()">Del</button></td>
     <td><button id = "percent" onclick = "percent()">%</button></td>
+    <td><button id = "close)" onclick = "displayInput(this.id)">)</button></td>
     <td><button id = "divide" onclick = "displayInput(this.id)">/</button></td>
     </tr>
     <tr>
     <td><button id = "seven" onclick = "displayInput(this.id)">7</button></td>
     <td><button id = "eight" onclick = "displayInput(this.id)">8</button></td>
     <td><button id = "nine" onclick = "displayInput(this.id)">9</button></td>
+    <td><button id = "open(" onclick = "displayInput(this.id)">(</button></td>
     <td><button id = "multiply" onclick = "displayInput(this.id)">*</button></td>
     </tr>
     <tr>
     <td><button id = "four" onclick = "displayInput(this.id)">4</button></td>
     <td><button id = "five" onclick = "displayInput(this.id)">5</button></td>
     <td><button id = "six" onclick = "displayInput(this.id)">6</button></td>
+    <td><button id = "root" onclick = "rooteth()">&#8730;</button></td>
     <td><button id = "minus" onclick = "displayInput(this.id)">-</button></td>
     </tr>
     <tr>
     <td><button id = "one" onclick = "displayInput(this.id)">1</button></td>
     <td><button id = "two" onclick = "displayInput(this.id)">2</button></td>
     <td><button id = "three" onclick = "displayInput(this.id)">3</button></td>
+    <td><button id = "squared" onclick = "displayInput(this.id)">x<sup>y</sup></button></td>
     <td><button id = "plus" onclick = "displayInput(this.id)">+</button></td>
     </tr>
     <tr>
     <td><button id = "sign" onclick = "sign()">+/-</button></td>
     <td><button id = "zero" onclick = "displayInput(this.id)">0</button></td>
     <td><button id = "point" onclick = "displayInput(this.id)">.</button></td>
+    <td><button id = "power2" onclick = "power2()">x<sup>2</sup></button></td>
     <td><button id = "equals" onclick = "displaySolve()">=</button></td>
     </tr>
     </table>
