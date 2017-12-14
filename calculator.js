@@ -2,6 +2,12 @@ var ginput = "";
 var afterEquals = false;
 var dots = false;
 
+function OnKeyDown(s, e) {
+     if (e.htmlEvent.keyCode == 13) {
+            displaySolve();
+     }
+}
+
 //Displays input by identifying each button based on id.
 //after equals is so that the result of one equation does not end up being used as the next number
 //Let's say 2=2 = 4 is performed
@@ -83,7 +89,7 @@ function displayInput(a) {
         ginput += "5";
         div.innerHTML += ginput.slice(-1);
     }else if (a == "six"){
-        
+
         if (ginput.slice(0,1) == "0" && /^0*$/.test(ginput)){
             ginput = "";
             div.innerHTML = "";
@@ -194,7 +200,7 @@ if (afterEquals == true) {
       if (dots == true){
         dots = false;
       }
-      if (ginput.slice(-1) == "-"){
+      if (ginput.slice(-2) == "--"){
         div.innerHTML += "";
         ginput += "";
       }else {
@@ -241,19 +247,28 @@ function displayInputnone() {
 //solves what's on display. changes afterEquals to true to allow for what was mentioned before.
 function displaySolve() {
     var div = document.getElementById("display-content");
+    if (ginput.includes("--")){
+      ginput = ginput.replace("--", "+");
+    }
+    var x = canEval(ginput);
+    if (x == false){
+      div.innerHTML = "Error.";
+      ginput = "";
+    }else {
     var solve = eval(ginput).toFixed(14);
     var solveNone = parseFloat(solve).toString();
     if (solve == "Infinity"){
         div.innerHTML = "Undefined";
         ginput = "";
     }else {
-    
+
     div.style.cssText= 'text-align:right; font-size:35px;';
     div.innerHTML = solveNone;
     ginput = solveNone;
     afterEquals = true;
     dots = false;
     }
+  }
 
 }
 //delete key. Got tired of not having one.
@@ -307,4 +322,9 @@ function power2(){
   ginput = parseFloat(ginput) * parseFloat(ginput);
   ginput = ginput.toString();
   div.innerHTML = ginput;
+}
+
+function canEval(str){
+  try { eval(str); } catch (e){ return false; }
+  return true;
 }
