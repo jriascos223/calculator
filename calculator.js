@@ -185,6 +185,10 @@ if (afterEquals == true) {
             afterEquals = false;
         }
     }else if (a == "point"){
+      if (ginput.slice(-1) == "+" || ginput.slice(-1) == "" || ginput.slice(-1) == "*" || ginput.slice(-1) == "-" || ginput.slice(-1) == "/"){
+            ginput += "0.";
+            div.innerHTML = ginput;
+        }
       if (ginput.slice(-1) == "." || dots == true){
         div.innerHTML += "";
         ginput += "";
@@ -252,7 +256,7 @@ function displaySolve() {
     }
     var x = canEval(ginput);
     if (x == false){
-      div.innerHTML = "Error.";
+      div.innerHTML = "Error";
       ginput = "";
     }else {
     var solve = eval(ginput).toFixed(14);
@@ -285,15 +289,20 @@ function deleteLast() {
 }
  //change from positive to negative simply by multiplying by -1
 function sign() {
+
     var div = document.getElementById("display-content");
-    ginput = eval(ginput) * -1;
-    ginput = ginput.toString();
-    if (ginput == "NaN") {
-        displayInputnone();
-        ginput = "";
-    }else {
+
+    	if (ginput.slice(-1) == "-" || ginput.slice(-1) == "+" || ginput.slice(-1) == "/" || ginput.slice(-1) == "*"){
+        ginput += "-";
         div.innerHTML = ginput;
-    }
+      }else{
+        ginput = parseFloat(ginput);
+        ginput = ginput * -1;
+        ginput = ginput.toString();
+        div.innerHTML = ginput;
+      }
+
+
 }
 
 //divide by 100
@@ -321,6 +330,10 @@ function power2(){
   var div = document.getElementById("display-content");
   ginput = parseFloat(ginput) * parseFloat(ginput);
   ginput = ginput.toString();
+  if (ginput == "NaN"){
+    div.innerHTML = "";
+    ginput = "";
+  }
   div.innerHTML = ginput;
 }
 
