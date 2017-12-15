@@ -292,7 +292,7 @@ function sign() {
 
     var div = document.getElementById("display-content");
 
-    	if (ginput.slice(-1) == "-" || ginput.slice(-1) == "+" || ginput.slice(-1) == "/" || ginput.slice(-1) == "*"){
+    	if (ginput.slice(-1) == "-" || ginput.slice(-1) == "+" || ginput.slice(-1) == "/" || ginput.slice(-1) == "*" || ginput.slice(-1) == "("){
         ginput += "-";
         div.innerHTML = ginput;
       }else{
