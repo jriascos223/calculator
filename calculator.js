@@ -204,7 +204,7 @@ if (afterEquals == true) {
       if (dots == true){
         dots = false;
       }
-      if (ginput.slice(-2) == "--"){
+      if (ginput.slice(-1) == "-"){
         div.innerHTML += "";
         ginput += "";
       }else {
