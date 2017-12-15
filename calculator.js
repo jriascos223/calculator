@@ -294,7 +294,7 @@ function sign() {
 
     	if (ginput.slice(-1) == "-" || ginput.slice(-1) == "+" || ginput.slice(-1) == "/" || ginput.slice(-1) == "*" || ginput.slice(-1) == "("){
         ginput += "-";
-        div.innerHTML = ginput;
+        div.innerHTML += "-";
       }else{
         ginput = parseFloat(ginput);
         ginput = ginput * -1;
