@@ -188,6 +188,7 @@ if (afterEquals == true) {
       if (ginput.slice(-1) == "+" || ginput.slice(-1) == "" || ginput.slice(-1) == "*" || ginput.slice(-1) == "-" || ginput.slice(-1) == "/"){
             ginput += "0.";
             div.innerHTML = ginput;
+            dots = true;
         }
       if (ginput.slice(-1) == "." || dots == true){
         div.innerHTML += "";
