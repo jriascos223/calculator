@@ -270,7 +270,11 @@ function displaySolve() {
     div.innerHTML = solveNone;
     ginput = solveNone;
     afterEquals = true;
-    dots = false;
+    if (solveNone.includes(".")){
+      dots = true;
+    }else {
+      dots = false;
+    }
     }
   }
 
@@ -296,8 +300,7 @@ function sign() {
         ginput += "-";
         div.innerHTML += "-";
       }else{
-        ginput = parseFloat(ginput);
-        ginput = ginput * -1;
+        ginput = eval(ginput) * -1;
         ginput = ginput.toString();
         div.innerHTML = ginput;
       }
